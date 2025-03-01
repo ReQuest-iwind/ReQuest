@@ -1,1 +1,1 @@
-fitz
+PyMuPDF==1.25.1
