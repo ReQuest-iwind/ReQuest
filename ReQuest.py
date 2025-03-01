@@ -12,7 +12,7 @@ def month(num):
     if num=='9':  return 'September'
     if num=='10': return 'October'
     if num=='11': return 'November'
-    if num=='12': return 'December
+    if num=='12': return 'December'
 
 def number5(num):
     return '00000'[:5-len(str(num))]+str(num)
