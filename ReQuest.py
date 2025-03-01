@@ -126,6 +126,7 @@ with col1:
 if submit:
     st.markdown('---')
     relevance = False
+    st.write(upload)
     text1 = extract(upload)
     rations = [0.0,]
     for exist in [f for f in Path('./HUB.dir').iterdir() if f.is_file()]:
