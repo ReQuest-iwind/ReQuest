@@ -126,7 +126,7 @@ if submit:
     relevance = False
     text1 = extract(upload)
     rations = [0.0,]
-    for exist in [f for f in Path('./Hub.dir').iterdir() if f.is_file()]:
+    for exist in [f for f in Path('./HUB.dir').iterdir() if f.is_file()]:
         text2 = extract(exist)
         ratio = similarity(text1,text2)
         rations.append(ratio)
@@ -152,7 +152,7 @@ if submit:
         else:
             comment = 'Upload: %s, %s %s:%s:%s %s %s'%(member,str(['0%s'%(x) if len(x)==1 else x for x in [str(time.day),]][0]),str(['0%s'%(x) if len(x)==1 else x for x in [str(time.hour),]][0]),str(['0%s'%(x) if len(x)==1 else x for x in [str(time.minute),]][0]),str(['0%s'%(x) if len(x)==1 else x for x in [str(time.second),]][0]),str(month(['0%s'%(x) if len(x)==1 else x for x in [str(time.month),]][0])),str(['0%s'%(x) if len(x)==1 else x for x in [str(time.year),]][0]))
             doc[0].insert_text((doc[0].rect.width-fitz.get_text_length(comment,fontsize=11)-10.0,10.0),comment,fontsize=11,color=(1,0,0))
-            doc.save('./Hub.dir/p-%s.pdf'%(number5(len([f for f in Path('./Hub.dir').iterdir()])+1)))
+            doc.save('./HUB.dir/p-%s.pdf'%(number5(len([f for f in Path('./HUB.dir').iterdir()])+1)))
             for i in range(0,len(Members)):
                 if Members[i]==member: Publics[i] = Publics[i]+1
             with open('./publices.txt','w') as f:
