@@ -33,44 +33,44 @@ def similarity(text1,text2):
 
 def ani(frame):
     if frame>360: frame = 360
-        with open('./publices.txt','r') as f:
-            data = [i.split() for i in f]
-        mem1,val1,col1 = str(data[1][0])+'\n'+str(data[1][1]),360.0*float(data[1][2])/sum([float(data[i][2]) for i in range(1,6)]),str(data[1][3])
-        mem2,val2,col2 = str(data[2][0])+'\n'+str(data[2][1]),360.0*float(data[2][2])/sum([float(data[i][2]) for i in range(1,6)]),str(data[2][3])
-        mem3,val3,col3 = str(data[3][0])+'\n'+str(data[3][1]),360.0*float(data[3][2])/sum([float(data[i][2]) for i in range(1,6)]),str(data[3][3])
-        mem4,val4,col4 = str(data[4][0])+'\n'+str(data[4][1]),360.0*float(data[4][2])/sum([float(data[i][2]) for i in range(1,6)]),str(data[4][3])
-        mem5,val5,col5 = str(data[5][0])+'\n'+str(data[5][1]),360.0*float(data[5][2])/sum([float(data[i][2]) for i in range(1,6)]),str(data[5][3])
-        ax.clear()
-        ax.set_aspect('equal')
-        if float(frame)<=val1:
-            val = [float(frame),360.0-float(frame)]
-            cal = [col1,'white']
-            mem = [mem1,]
-        if float(frame)>val1 and float(frame)<=val1+val2:
-            val = [val1,float(frame)-val1,360.0-float(frame)]
-            cal = [col1,col2,'white']
-            mem = [mem1,mem2]
-        if float(frame)>val1+val2 and float(frame)<=val1+val2+val3:
-            val = [val1,val2,float(frame)-val1-val2,360.0-float(frame)]
-            cal = [col1,col2,col3,'white']
-            mem = [mem1,mem2,mem3]
-        if float(frame)>val1+val2+val3 and float(frame)<=val1+val2+val3+val4:
-            val = [val1,val2,val3,float(frame)-val1-val2-val3,360.0-float(frame)]
-            cal = [col1,col2,col3,col4,'white']
-            mem = [mem1,mem2,mem3,mem4]
-        if float(frame)>val1+val2+val3+val4 and float(frame)<=val1+val2+val3+val4+val5:
-            val = [val1,val2,val3,val4,float(frame)-val1-val2-val3-val4,360.0-float(frame)]
-            cal = [col1,col2,col3,col4,col5,'white']
-            mem = [mem1,mem2,mem3,mem4,mem5]
-        w,_ = ax.pie(val,colors=cal,startangle=0.0)
-        ax.set_position([-0.18,0.0,1.0,1.0])
-        centre_circle = plt.Circle((0, 0), 0.7, fc='white')
-        ax.add_artist(centre_circle)
-        Nrep = int(sum([float(data[i][2]) for i in range(1,6)])*frame/360)
-        ax.text(0.0,0.0,f"{Nrep} reports",color='#007BFF',ha='center',va='center',fontsize=20,fontweight='bold')
-        l = ax.legend(w,mem,title="",loc="center left",bbox_to_anchor=(0.9,0.0,0.5,1.0),frameon=False,fontsize=15)
-        for text in l.get_texts():
-            text.set_color('#007BFF')
+    with open('./publices.txt','r') as f:
+        data = [i.split() for i in f]
+    mem1,val1,col1 = str(data[1][0])+'\n'+str(data[1][1]),360.0*float(data[1][2])/sum([float(data[i][2]) for i in range(1,6)]),str(data[1][3])
+    mem2,val2,col2 = str(data[2][0])+'\n'+str(data[2][1]),360.0*float(data[2][2])/sum([float(data[i][2]) for i in range(1,6)]),str(data[2][3])
+    mem3,val3,col3 = str(data[3][0])+'\n'+str(data[3][1]),360.0*float(data[3][2])/sum([float(data[i][2]) for i in range(1,6)]),str(data[3][3])
+    mem4,val4,col4 = str(data[4][0])+'\n'+str(data[4][1]),360.0*float(data[4][2])/sum([float(data[i][2]) for i in range(1,6)]),str(data[4][3])
+    mem5,val5,col5 = str(data[5][0])+'\n'+str(data[5][1]),360.0*float(data[5][2])/sum([float(data[i][2]) for i in range(1,6)]),str(data[5][3])
+    ax.clear()
+    ax.set_aspect('equal')
+    if float(frame)<=val1:
+        val = [float(frame),360.0-float(frame)]
+        cal = [col1,'white']
+        mem = [mem1,]
+    if float(frame)>val1 and float(frame)<=val1+val2:
+        val = [val1,float(frame)-val1,360.0-float(frame)]
+        cal = [col1,col2,'white']
+        mem = [mem1,mem2]
+    if float(frame)>val1+val2 and float(frame)<=val1+val2+val3:
+        val = [val1,val2,float(frame)-val1-val2,360.0-float(frame)]
+        cal = [col1,col2,col3,'white']
+        mem = [mem1,mem2,mem3]
+    if float(frame)>val1+val2+val3 and float(frame)<=val1+val2+val3+val4:
+        val = [val1,val2,val3,float(frame)-val1-val2-val3,360.0-float(frame)]
+        cal = [col1,col2,col3,col4,'white']
+        mem = [mem1,mem2,mem3,mem4]
+    if float(frame)>val1+val2+val3+val4 and float(frame)<=val1+val2+val3+val4+val5:
+        val = [val1,val2,val3,val4,float(frame)-val1-val2-val3-val4,360.0-float(frame)]
+        cal = [col1,col2,col3,col4,col5,'white']
+        mem = [mem1,mem2,mem3,mem4,mem5]
+    w,_ = ax.pie(val,colors=cal,startangle=0.0)
+    ax.set_position([-0.18,0.0,1.0,1.0])
+    centre_circle = plt.Circle((0, 0), 0.7, fc='white')
+    ax.add_artist(centre_circle)
+    Nrep = int(sum([float(data[i][2]) for i in range(1,6)])*frame/360)
+    ax.text(0.0,0.0,f"{Nrep} reports",color='#007BFF',ha='center',va='center',fontsize=20,fontweight='bold')
+    l = ax.legend(w,mem,title="",loc="center left",bbox_to_anchor=(0.9,0.0,0.5,1.0),frameon=False,fontsize=15)
+    for text in l.get_texts():
+        text.set_color('#007BFF')
 
 def preprocess(text):
     sentences = sent_tokenize(text)
