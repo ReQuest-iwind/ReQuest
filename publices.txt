@@ -1,0 +1,6 @@
+name     surname     publices     colors
+Panagiotis Chaviaropoulos   0   #001F3F
+Giorgos Sieros   0   #004080
+Dimitris Manolas   0   #0059B3
+Alkis Milidis   0   #87CEEB
+Giannis Serafeim   1   #ADD8E6
