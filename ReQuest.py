@@ -162,3 +162,14 @@ if submit:
                 ax.set_aspect('equal')
                 a = FuncAnimation(fig,ani,frames=np.arange(0,481,1),interval=100)
                 a.save('./anim1.gif',writer=PillowWriter(fps=20))
+with col2:
+    c1,c2 = st.columns([1,1])
+    with c1:
+        try:
+            st.image('./anim1.gif')
+        except:
+            pass
+    with c2:
+        st.image('./anim2.gif')
+    st.markdown('---')
+    st.subheader(':blue[Settings]')
